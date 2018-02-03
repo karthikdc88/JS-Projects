@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
+
+<style type="text/css">
+	.start {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 2em;
+	}
+
+	#clockDisplay {
+		position: relative;
+		width: 478px;
+		height: 485px;
+		background-image: url(images/clockFace.png);
+		background-size: 380px 380px;
+    	background-repeat: no-repeat;
+		left: 50%;
+		margin: 5em 0 0 -225px;
+	}
+
+	#clockDisplay div {
+		position: absolute;
+	}
+
+	#clockDisplay img[src*='hour'] {
+	   -webkit-transition: -webkit-transform 216000s linear;
+    -moz-transition: -moz-transform 216000s linear;
+    -o-transition: -o-transform 216000s linear;
+    -ms-transition: -ms-transform 216000s linear;
+    transition: transform 216000s linear;
+	}
+
+	#clockDisplay:target img[src*='hour'] {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+	#clockDisplay img[src*='second'] {
+	  -webkit-transition: -webkit-transform 600000s linear;
+		-moz-transition: -moz-transform 600000s linear;
+		-o-transition: -o-transform 600000s linear;
+		-ms-transition: -ms-transform 600000s linear;
+		transition: transform 600000s linear;
+	}
+
+	#clockDisplay:target img[src*='second'] {
+	  -webkit-transform: rotate(3600000deg);
+    -moz-transform: rotate(3600000deg);
+    -o-transform: rotate(3600000deg);
+    -ms-transform: rotate(3600000deg);
+    transform: rotate(3600000deg);
+	}
+
+	#clockDisplay img[src*='minute'] {
+	  -webkit-transition: -webkit-transform 360000s linear;
+    -moz-transition: -moz-transform 360000s linear;
+    -o-transition: -o-transform 360000s linear;
+    -ms-transition: -ms-transform 360000s linear;
+    transition: transform 360000s linear;
+	}
+
+	#clockDisplay:target img[src*='minute'] {
+	  -webkit-transform: rotate(36000deg);
+    -moz-transform: rotate(36000deg);
+    -o-transform: rotate(36000deg);
+    -ms-transform: rotate(36000deg);
+    transform: rotate(36000deg);
+	}
+</style>
+</head>
+<body>
+<div id="experiment">
+    <p class="start"><a href="#clockDisplay" id="start">Start Clock</a></p>
+    <div id="clockDisplay">
+        <div id="hour"><img src="images/hourHand.png" /></div>
+        <div id="minute"><img src="images/minuteHand.png" /></div>
+        <div id="second"><img src="images/secondHand.png" /></div>
+    </div>
+</div>
+
+<script src="js/clock.js"></script>
+</body>
+
+
+</html>
